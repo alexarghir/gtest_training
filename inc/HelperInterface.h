@@ -6,6 +6,7 @@
 class HelperInterface
 {
 public:
+    virtual ~HelperInterface() = default;
     virtual void readTheString(std::string s) = 0;
     virtual void readTheCharArray(const char* s) = 0;
     virtual void modifyTheString(std::string& s) = 0;

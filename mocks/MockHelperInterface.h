@@ -1,11 +1,17 @@
-#ifndef LAB_RAT_H
-#define LAB_RAT_H
+#ifndef MOCK_HELPER_INTERFACE_H
+#define MOCK_HELPER_INTERFACE_H
 
-#include <string>
+#include <HelperInterface.h>
 
-class StringOperator {
+class MockHelperInterface: public HelperInterface
+{
 public:
-    void passString(std::string arg);
+    MOCK_METHOD1(readTheString,
+                 void(std::string s));
+    MOCK_METHOD1(readTheCharArray,
+                 void(const char* s));
+    MOCK_METHOD1(modifyTheString,
+                 void(std::string& s));
 };
 
-#endif //LAB_RAT_H
+#endif //MOCK_HELPER_INTERFACE_H
